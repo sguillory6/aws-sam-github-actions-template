@@ -9,7 +9,7 @@ jobs:
     uses: eliasbrange/aws-sam-template/.github/workflows/LintAndTest.yml@main
   deploy-stage:
     runs-on: ubuntu-latest
-    environment: stage
+    environment: eliasbrange-sam-github-actions-stage
     needs: [test-and-lint]
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
           deploy-role: ${{ secrets.DEPLOY_ROLE }}
   deploy-prod:
     runs-on: ubuntu-latest
-    environment: production
+    environment: eliasbrange-sam-github-actions-prod
     needs: [deploy-stage]
     steps:
       - uses: actions/checkout@v2

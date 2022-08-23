@@ -8,7 +8,7 @@ jobs:
     uses: eliasbrange/aws-sam-template/.github/workflows/LintAndTest.yml@main
   deploy:
     runs-on: ubuntu-latest
-    environment: development
+    environment: eliasbrange-sam-github-actions
     needs: [test-and-lint]
     steps:
       - uses: actions/checkout@v2
